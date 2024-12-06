@@ -15,6 +15,13 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
         }
 
         .sidebar {
@@ -32,6 +39,10 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             transform: translateX(0);
             transition: transform 0.3s ease;
+        }
+
+        .sidebar.dark-mode {
+            background-color: #1f1f1f;
         }
 
         .sidebar img {
@@ -57,6 +68,24 @@
         }
 
         .sidebar a:hover {
+            background-color: #005bb5;
+        }
+
+        /* Dark Mode Button in Sidebar */
+        .dark-mode-toggle {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+
+        .dark-mode-toggle:hover {
             background-color: #005bb5;
         }
 
@@ -88,6 +117,10 @@
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
+        }
+
+        .main-content.dark-mode {
+            background-color: #333;
         }
 
         .main-content h2 {
@@ -142,21 +175,10 @@
             }
 
             .menu-toggle {
-    display: block;
-    opacity: 0.5; /* Halb durchsichtig */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
-}
-
-.menu-toggle.hide {
-    opacity: 0;
-    transform: translateY(-100%); /* Button verschwindet nach oben */
-}
-
-/* JavaScript für das Scroll-Verhalten */
-body {
-    padding-top: 60px; /* Für den Fall, dass der Button oben fixiert wird */
-}
-
+                display: block;
+                opacity: 0.5;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
 
             .sidebar.open {
                 transform: translateX(0);
@@ -201,6 +223,8 @@ body {
         <a href="redaktion.html">Redaktion</a>
         <a href="wir.html">Über uns!</a>
         <a href="impressum.html">Impressum</a>
+        
+        <!-- Dark Mode Toggle Button -->
     </aside>
 
     <div class="content">
@@ -247,17 +271,17 @@ body {
                 menuToggle.classList.remove('hide');
             }
         }
-    
-        // Scroll-Verhalten für den Button
-        let menuToggle = document.querySelector('.menu-toggle');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {  // Wenn mehr als 50px gescrollt wurde
-                menuToggle.classList.add('hide');
-            } else {
-                menuToggle.classList.remove('hide');
-            }
-        });
+
+        // Dark Mode umschalten
+        function toggleDarkMode() {
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            
+            body.classList.toggle('dark-mode');
+            sidebar.classList.toggle('dark-mode');
+            mainContent.classList.toggle('dark-mode');
+        }
     </script>
-    
+</body>
 </html>

@@ -7,7 +7,7 @@
     <meta name="author" content="Huesmann-Schilde">
     <meta name="ProgId" content="FrontPage.Editor.Document">
     <meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
-    <title>Radio Herby-Impressunm</title>
+    <title>Radio Herby-Impressum</title>
     <link rel="icon" type="image/x-icon" href="index-Dateien/RH-Logo.gif">
     <style>
         body {
@@ -19,6 +19,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .sidebar {
@@ -92,6 +93,7 @@
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .main-content h2 {
@@ -117,6 +119,23 @@
             background-color: #333;
             color: white;
             margin-top: auto;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .main-content.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        footer.dark-mode {
+            background-color: #333;
+            color: white;
         }
 
         /* Toggle Button for Sidebar */
@@ -147,6 +166,8 @@
 
             .menu-toggle {
                 display: block;
+                opacity: 0.5;
+                transition: opacity 0.3s ease, transform 0.3s ease;
             }
 
             .sidebar.open {
@@ -157,6 +178,7 @@
                 margin-left: 250px;
             }
         }
+
         .close-menu {
             display: none;
             top: 20px;
@@ -170,30 +192,18 @@
             font-size: 1.2em;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
-            .close-menu {
-    display: block;
-    opacity: 0.5; /* Halb durchsichtig */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
-}
-@media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
 
-            .content {
-                margin-left: 0;
-            }
+        .close-menu {
+            display: block;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
 
-            .menu-toggle {
-    display: block;
-    opacity: 0.5; /* Halb durchsichtig */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
-}
-}
-.menu-toggle.hide {
-    opacity: 0;
-    transform: translateY(-100%); /* Button verschwindet nach oben */
-}
+        .menu-toggle.hide {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
     </style>
 </head>
 <body>
@@ -257,22 +267,27 @@
             sidebar.classList.toggle('open');
             content.classList.toggle('shift');
             
-            // Button ausblenden, wenn Sidebar geöffnet ist
+            // Button ausblenden, wenn Sidebar geschlossen ist
             if (sidebar.classList.contains('open')) {
-                menuToggle.classList.add('hide');
+                menuToggle.style.opacity = '0';
             } else {
-                menuToggle.classList.remove('hide');
+                menuToggle.style.opacity = '1';
             }
         }
-    
-        // Scroll-Verhalten für den Button
-        let menuToggle = document.querySelector('.menu-toggle');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {  // Wenn mehr als 50px gescrollt wurde
-                menuToggle.classList.add('hide');
-            } else {
-                menuToggle.classList.remove('hide');
+
+        // Funktion für Dark Mode Umschaltung
+        const toggleDarkMode = () => {
+            document.body.classList.toggle("dark-mode");
+            const elements = document.querySelectorAll('.main-content, footer');
+            elements.forEach(element => {
+                element.classList.toggle("dark-mode");
+            });
+        };
+
+        // Dark Mode per Taste umschalten
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "d" || event.key === "D") {
+                toggleDarkMode();
             }
         });
     </script>

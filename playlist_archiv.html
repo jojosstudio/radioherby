@@ -196,6 +196,60 @@
     transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
 }
 }
+.playlist-box a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #0073e6;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 6px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.playlist-box a:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.playlist-box a:active {
+    background-color: #1e7e34;
+    transform: translateY(1px);
+}
+
+.playlist-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.playlist-box li {
+    margin-bottom: 10px;
+}
+
+.playlist-box audio {
+    margin-top: 8px; /* Abstand zwischen dem Button und dem Audio-Player */
+    width: 100%; /* Audio-Player nimmt die gesamte Breite des Containers ein */
+    border-radius: 6px;
+    background-color: #f1f1f1;
+}
+/* Standardmäßig die Audio-Container ausblenden */
+.audio-container {
+    display: none;
+}
+
+/* Optionales Styling für den Link, der das Audio anzeigt */
+.audio-link {
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.audio-link:hover {
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -224,22 +278,190 @@
         <section class="main-content">
             <h2>Playlist-Archiv</h2>
             <div class="playlist-box">
-                <h3>Playlist 589</h3>
-                <p><b>Datum:</b> 01.12.2024</p>
-                <p><b>Titel:</b> Christina Aguilera: Beautiful, Rockstead: Viva La Vida</p>
-            </div>
-            <div class="playlist-box">
-                <h3>Playlist 588</h3>
-                <p><b>Datum:</b> 24.11.2024</p>
-                <p><b>Titel:</b> Die Ärzte: Schrei nach Liebe, Toten Hosen: Tage wie diese</p>
-            </div>
-            <div class="playlist-box">
                 <h3>Playlist 587</h3>
                 <p><b>Datum:</b> 17.11.2024</p>
                 <p><b>Titel:</b> Red Hot Chili Peppers: Californication, Die Prinzen: Alles nur geklaut</p>
+                <ul>
+                    <!-- RH 525 (14.07.19) -->
+                    <li><a href="#" class="audio-link">Zentrale Abschlussprüfungen der 10er</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/525_1.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Die Klasse 10D im Fantasialand</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/525_2.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Mottotage der 10er</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/525_3.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Sport- und Spielefest</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/525_4.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Das letzte Jahr der GHR (Frau Schilde)</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/525_5.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Abschlüsse der letzten 10er (Frau Schilde)</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/525_6.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </section>
-    </div>
+            
+            <div class="playlist-box">
+                <h3>Playlist 524</h3>
+                <p><b>Datum:</b> 02.06.2019</p>
+                <p><b>Titel:</b> Chronik der GHR, Diamantener Meisterbrief, Interview mit Anna Hauck</p>
+                <ul>
+                    <li><a href="#" class="audio-link">Chronik der GHR (8) 2009-2019</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_1.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Diamantener Meisterbrief für Wolfgang Hauck</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_2.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Interview mit Anna Hauck (ehemalige Schülerin der GHR)</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_3.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Interview mit Herrn Lisson über die Anmeldezahlen zur Gesamtschule Erle</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_5.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Rückblick auf das Fußballturnier und die Sieger</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_4.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Berufswahlpraktikum der Klassen9 und Berufsfelderkundung der Klassen 8</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_7.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Zentrale Abschlussprüfungen der 10er (D/E)</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_6.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Termine</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/524_8.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="playlist-box">
+                <h3>Playlist 523</h3>
+                <p><b>Datum:</b> 12.05.2019</p>
+                <p><b>Titel:</b> Chronik GHR (7), Fußballturnier, Lehrerinterview</p>
+                <ul>
+                    <li><a href="#" class="audio-link">Chronik GHR (7) 1999-2008</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/523_1.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Fußballturnier</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/523_2.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Schulsanitäter</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/523_3.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Londonfahrt 10B</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/523_4.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Bombenalarm in der Nähe unserer Schulen</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/523_5.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <li><a href="#" class="audio-link">Lehrerinterview Frau Halsch</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="https://radioherby.de/523_6.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
 
     <footer>
         &copy; 2024 Radio Herby. Alle Rechte vorbehalten.
@@ -273,6 +495,36 @@
                 menuToggle.classList.remove('hide');
             }
         });
+// Alle Links mit der Klasse "audio-link" auswählen
+const audioLinks = document.querySelectorAll('.audio-link');
+
+audioLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Verhindern, dass der Link die Seite neu lädt
+        e.preventDefault();
+
+        // Das nächste Audio-Element einblenden
+        const audioContainer = link.nextElementSibling;
+        const audioElement = audioContainer.querySelector('audio');
+
+        // Wenn der Audio-Container ausgeblendet ist, zeigen wir ihn an und spielen ihn ab
+        if (audioContainer.style.display === 'none' || audioContainer.style.display === '') {
+            audioContainer.style.display = 'block';
+            audioElement.play();
+        } else {
+            // Wenn das Audio schon abgespielt wird, brechen wir es ab und klappen es wieder ein
+            audioElement.pause();
+            audioElement.currentTime = 0; // Setzt den Fortschritt zurück
+            audioContainer.style.display = 'none';
+        }
+
+        // Wenn das Audio zu Ende ist, klappen wir den Container wieder ein
+        audioElement.addEventListener('ended', () => {
+            audioContainer.style.display = 'none';
+        });
+    });
+});
+
     </script>
 </body>
 </html>

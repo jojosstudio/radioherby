@@ -95,11 +95,12 @@
             margin-bottom: 10px;
         }
 
-        .main-content ol {
-            padding-left: 20px;
+        .main-content ul {
+            list-style: none;
+            padding: 0;
         }
 
-        .main-content ol li {
+        .main-content ul li {
             background: #f9f9f9;
             margin: 10px 0;
             padding: 10px;
@@ -141,8 +142,21 @@
             }
 
             .menu-toggle {
-                display: block;
-            }
+    display: block;
+    opacity: 0.5; /* Halb durchsichtig */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
+}
+
+.menu-toggle.hide {
+    opacity: 0;
+    transform: translateY(-100%); /* Button verschwindet nach oben */
+}
+
+/* JavaScript für das Scroll-Verhalten */
+body {
+    padding-top: 60px; /* Für den Fall, dass der Button oben fixiert wird */
+}
+
 
             .sidebar.open {
                 transform: translateX(0);
@@ -151,7 +165,8 @@
             .content.shift {
                 margin-left: 250px;
             }
-            .close-menu {
+        }
+        .close-menu {
             display: none;
             top: 20px;
             left: 20px;
@@ -169,7 +184,6 @@
     opacity: 0.5; /* Halb durchsichtig */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
 }
-        }
     </style>
 </head>
 <body>

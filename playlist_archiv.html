@@ -161,7 +161,9 @@
             .content.shift {
                 margin-left: 250px;
             }
-            .close-menu {
+
+        }
+        .close-menu {
             display: none;
             top: 20px;
             left: 20px;
@@ -179,7 +181,21 @@
     opacity: 0.5; /* Halb durchsichtig */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
 }
-        }
+@media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+    display: block;
+    opacity: 0.5; /* Halb durchsichtig */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
+}
+}
     </style>
 </head>
 <body>

@@ -151,6 +151,24 @@
             .content.shift {
                 margin-left: 250px;
             }
+            .close-menu {
+            display: none;
+            top: 20px;
+            left: 20px;
+            background-color: #494949;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.2em;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+            .close-menu {
+    display: block;
+    opacity: 0.5; /* Halb durchsichtig */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
+}
         }
     </style>
 </head>
@@ -159,6 +177,7 @@
 
     <aside class="sidebar">
         <img src="playlist-Dateien/RH-Logo.gif" alt="Radio Herby Logo">
+        <button class="close-menu" onclick="toggleSidebar()">☰ Menü schließen</button>
         <h3>Navigation</h3>
         <a href="index.html">Aktuelle Sendung</a>
         <a href="archiv.html">Archiv</a>
@@ -198,12 +217,33 @@
     </footer>
 
     <script>
+        // Funktion für das Umschalten der Sidebar
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             const content = document.querySelector('.content');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
             sidebar.classList.toggle('open');
             content.classList.toggle('shift');
+            
+            // Button ausblenden, wenn Sidebar geöffnet ist
+            if (sidebar.classList.contains('open')) {
+                menuToggle.classList.add('hide');
+            } else {
+                menuToggle.classList.remove('hide');
+            }
         }
+    
+        // Scroll-Verhalten für den Button
+        let menuToggle = document.querySelector('.menu-toggle');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {  // Wenn mehr als 50px gescrollt wurde
+                menuToggle.classList.add('hide');
+            } else {
+                menuToggle.classList.remove('hide');
+            }
+        });
     </script>
 </body>
 </html>

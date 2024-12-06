@@ -30,6 +30,8 @@
             align-items: center;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transform: translateX(0);
+            transition: transform 0.3s ease;
         }
 
         .sidebar img {
@@ -62,6 +64,7 @@
             margin-left: 250px;
             flex-grow: 1;
             padding: 20px;
+            transition: margin-left 0.3s ease;
         }
 
         header {
@@ -92,29 +95,16 @@
             margin-bottom: 10px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        .main-content ul {
+            list-style: none;
+            padding: 0;
         }
 
-        table th, table td {
-            border: 1px solid #ddd;
+        .main-content ul li {
+            background: #f9f9f9;
+            margin: 10px 0;
             padding: 10px;
-            text-align: center;
-        }
-
-        table th {
-            background-color: #0073e6;
-            color: white;
-        }
-
-        table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        table tr:hover {
-            background-color: #f1f1f1;
+            border-left: 5px solid #0073e6;
         }
 
         footer {
@@ -125,22 +115,83 @@
             margin-top: auto;
         }
 
+        /* Toggle Button for Sidebar */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.2em;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .sidebar {
-                position: static;
-                width: 100%;
+                transform: translateX(-100%);
             }
 
             .content {
                 margin-left: 0;
             }
+
+            .menu-toggle {
+    display: block;
+    opacity: 0.5; /* Halb durchsichtig */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
+}
+
+.menu-toggle.hide {
+    opacity: 0;
+    transform: translateY(-100%); /* Button verschwindet nach oben */
+}
+
+/* JavaScript für das Scroll-Verhalten */
+body {
+    padding-top: 60px; /* Für den Fall, dass der Button oben fixiert wird */
+}
+
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .content.shift {
+                margin-left: 250px;
+            }
         }
+        .close-menu {
+            display: none;
+            top: 20px;
+            left: 20px;
+            background-color: #494949;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.2em;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+            .close-menu {
+    display: block;
+    opacity: 0.5; /* Halb durchsichtig */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
+}
     </style>
 </head>
 <body>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰ Menü</div>
+
     <aside class="sidebar">
         <img src="sendertermine-Dateien/RH-Logo.gif" alt="Radio Herby Logo">
+        <button class="close-menu" onclick="toggleSidebar()">☰ Menü schließen</button>
         <h3>Navigation</h3>
         <a href="index.html">Aktuelle Sendung</a>
         <a href="archiv.html">Archiv</a>
@@ -210,5 +261,34 @@
     <footer>
         &copy; 2024 Radio Herby. Alle Rechte vorbehalten.
     </footer>
+    <script>
+        // Funktion für das Umschalten der Sidebar
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            sidebar.classList.toggle('open');
+            content.classList.toggle('shift');
+            
+            // Button ausblenden, wenn Sidebar geöffnet ist
+            if (sidebar.classList.contains('open')) {
+                menuToggle.classList.add('hide');
+            } else {
+                menuToggle.classList.remove('hide');
+            }
+        }
+    
+        // Scroll-Verhalten für den Button
+        let menuToggle = document.querySelector('.menu-toggle');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {  // Wenn mehr als 50px gescrollt wurde
+                menuToggle.classList.add('hide');
+            } else {
+                menuToggle.classList.remove('hide');
+            }
+        });
+    </script>
 </body>
 </html>

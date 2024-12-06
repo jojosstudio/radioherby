@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Herby-Homepage</title>
+    <title>Radio Herby-Playlist-Archiv</title>
     <link rel="icon" type="image/x-icon" href="index-Dateien/RH-Logo.gif">
     <style>
         body {
@@ -95,16 +95,25 @@
             margin-bottom: 10px;
         }
 
-        .main-content ul {
-            list-style: none;
-            padding: 0;
+        .playlist-box {
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-left: 5px solid #0073e6;
+            border-radius: 5px;
         }
 
-        .main-content ul li {
-            background: #f9f9f9;
-            margin: 10px 0;
-            padding: 10px;
-            border-left: 5px solid #0073e6;
+        .playlist-box h3 {
+            color: #0073e6;
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+
+        .playlist-box p {
+            margin: 0;
+            font-size: 1em;
+            line-height: 1.5;
         }
 
         footer {
@@ -159,7 +168,7 @@
     <div class="menu-toggle" onclick="toggleSidebar()">☰ Menü</div>
 
     <aside class="sidebar">
-        <img src="index-Dateien/RH-Logo.gif" alt="Radio Herby Logo">
+        <img src="playlistarchiv-Dateien/RH-Logo.gif" alt="Radio Herby Logo">
         <h3>Navigation</h3>
         <a href="index.html">Aktuelle Sendung</a>
         <a href="archiv.html">Archiv</a>
@@ -178,19 +187,22 @@
         </header>
 
         <section class="main-content">
-            <h2>Nächste Sendung:</h2>
-            <p><strong>590. Sendung: 8. Dezember 2024 um 19:04 Uhr</strong></p>
-            <hr>
-            <h3>Programm der 590. Sendung:</h3>
-            <ul>
-                <li>Die Gesamtschule in Erle in Costa Rica</li>
-                <li>Der Besuch aus Costa Rica in Erle</li>
-                <li>Die Berufsberatung durch Frau Bellendorf (Agentur für Arbeit)</li>
-                <li>Die Ausstellung des Dt. Bundestages an unserer Schule: Eröffnung durch Frau Römer und Herrn Tesch</li>
-                <li>Die Ausstellung des Dt. Bundestages an unserer Schule: SchülerInnen-Vertreter und Elternvertreter</li>
-                <li>Die Ausstellung des Dt. Bundestages an unserer Schule: Gäste</li>
-                <li>RH-Lehrerininterview mit Frau Kolbecher</li>
-            </ul>
+            <h2>Playlist-Archiv</h2>
+            <div class="playlist-box">
+                <h3>Playlist 589</h3>
+                <p><b>Datum:</b> 01.12.2024</p>
+                <p><b>Titel:</b> Christina Aguilera: Beautiful, Rockstead: Viva La Vida</p>
+            </div>
+            <div class="playlist-box">
+                <h3>Playlist 588</h3>
+                <p><b>Datum:</b> 24.11.2024</p>
+                <p><b>Titel:</b> Die Ärzte: Schrei nach Liebe, Toten Hosen: Tage wie diese</p>
+            </div>
+            <div class="playlist-box">
+                <h3>Playlist 587</h3>
+                <p><b>Datum:</b> 17.11.2024</p>
+                <p><b>Titel:</b> Red Hot Chili Peppers: Californication, Die Prinzen: Alles nur geklaut</p>
+            </div>
         </section>
     </div>
 

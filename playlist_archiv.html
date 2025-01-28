@@ -88,6 +88,7 @@
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
+            margin-bottom: 20px; /* Abstände zwischen den einzelnen Playlist-Boxen */
         }
 
         .main-content h2 {
@@ -112,8 +113,64 @@
 
         .playlist-box p {
             margin: 0;
+            font-size: 1.1em;
+            padding: 10px 0; /* Abstand zwischen Inhalt und Rand */
+            color: #333;
+        }
+
+        .playlist-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .playlist-box li {
+            margin-bottom: 10px;
+        }
+
+        .playlist-box a {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
             font-size: 1em;
-            line-height: 1.5;
+            border-radius: 6px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .playlist-box a:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .playlist-box a:active {
+            background-color: #1e7e34;
+            transform: translateY(1px);
+        }
+
+        .playlist-box audio {
+            margin-top: 8px; /* Abstand zwischen dem Button und dem Audio-Player */
+            width: 100%; /* Audio-Player nimmt die gesamte Breite des Containers ein */
+            border-radius: 6px;
+            background-color: #f1f1f1;
+        }
+
+        /* Standardmäßig die Audio-Container ausblenden */
+        .audio-container {
+            display: none;
+        }
+
+        /* Optionales Styling für den Link, der das Audio anzeigt */
+        .audio-link {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .audio-link:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -152,6 +209,8 @@
 
             .menu-toggle {
                 display: block;
+                opacity: 0.5; /* Halb durchsichtig */
+                transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
             }
 
             .sidebar.open {
@@ -161,95 +220,7 @@
             .content.shift {
                 margin-left: 250px;
             }
-
         }
-        .close-menu {
-            display: none;
-            top: 20px;
-            left: 20px;
-            background-color: #494949;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 1000;
-            font-size: 1.2em;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-            .close-menu {
-    display: block;
-    opacity: 0.5; /* Halb durchsichtig */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
-}
-@media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
-
-            .content {
-                margin-left: 0;
-            }
-
-            .menu-toggle {
-    display: block;
-    opacity: 0.5; /* Halb durchsichtig */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
-}
-}
-.playlist-box a {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #0073e6;
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    border-radius: 6px;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.playlist-box a:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
-
-.playlist-box a:active {
-    background-color: #1e7e34;
-    transform: translateY(1px);
-}
-
-.playlist-box ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.playlist-box li {
-    margin-bottom: 10px;
-}
-
-.playlist-box audio {
-    margin-top: 8px; /* Abstand zwischen dem Button und dem Audio-Player */
-    width: 100%; /* Audio-Player nimmt die gesamte Breite des Containers ein */
-    border-radius: 6px;
-    background-color: #f1f1f1;
-}
-/* Standardmäßig die Audio-Container ausblenden */
-.audio-container {
-    display: none;
-}
-
-/* Optionales Styling für den Link, der das Audio anzeigt */
-.audio-link {
-    color: #007BFF;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.audio-link:hover {
-    text-decoration: underline;
-}
-
     </style>
 </head>
 <body>
@@ -276,316 +247,45 @@
 
         <section class="main-content">
             <h2>Playlist-Archiv</h2>
-            <section class="main-content">
-    <h2>Playlist-Archiv</h2>
 
-    <!-- Playlist RH 591 -->
-    <div class="playlist-box">
-        <h3>Playlist RH 591</h3>
-        <p><b>Datum:</b> 12.01.2024</p>
-        <ul>
-            <li><a href="591_1.mp3" class="audio-link">Hinweis Schulpflicht von Frau Kmuch (Agentur für Arbeit)</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="591_1.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="591_2.mp3" class="audio-link">Ergänzungen durch die Berufswahlkoordinatorin Frau Borissov</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="591_2.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="591_3.mp3" class="audio-link">Rückblick des Schulleiters (1.)</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="591_3.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="591_4.mp3" class="audio-link">Rückblick des Schulleiters (2.)</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="591_4.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="591_5.mp3" class="audio-link">Ausblick auf das neue Jahr</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="591_5.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="591_6.mp3" class="audio-link">Wünsche für 2025</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="591_6.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-        </ul>
-    </div>
- <section class="main-content">
-            
-            <h3>Playlist 591 (12.01.2025)</h3>
-            <ol>
-                <li>A Great Big World: This is the new year</li>
-                <li>The Police: Dead end job</li>
-                <li>Evil Conduct: Working class heroes</li>
-                <li>Sea Lemon: Last year</li>
-                <li>Jamie Miller: Last yea</li>
-                <li>The Eagles: Funky new year</li>
-                <li>Peter Fox: Alles neu!</li>
-                <li>You not us & Michael Schulte: Bye Bye Bye</li>
-            </ol>
+            <!-- Playlist RH 591 -->
+            <div class="playlist-box">
+                <h3>Playlist RH 591</h3>
+                <p><b>Datum:</b> 12.01.2024</p>
+                <ul>
+                    <li><a href="591_1.mp3" class="audio-link">Hinweis Schulpflicht von Frau Kmuch (Agentur für Arbeit)</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="591_1.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <!-- Weitere Audio-Links hier -->
+                </ul>
+            </div>
+
+            <!-- Playlist RH 590 -->
+            <div class="playlist-box">
+                <h3>Playlist RH 590</h3>
+                <p><b>Datum:</b> 08.12.2024</p>
+                <ul>
+                    <li><a href="590_1.mp3" class="audio-link">Die Gesamtschule in Erle in Costa Rica</a>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="590_1.mp3" type="audio/mp3">
+                                Ihr Browser unterstützt dieses Audioformat nicht.
+                            </audio>
+                        </div>
+                    </li>
+                    <!-- Weitere Audio-Links hier -->
+                </ul>
+            </div>
+
+            <!-- Weitere Playlists hier -->
+
         </section>
     </div>
-    <!-- Playlist RH 590 -->
-    <div class="playlist-box">
-        <h3>Playlist RH 590</h3>
-        <p><b>Datum:</b> 08.12.2024</p>
-        <ul>
-            <li><a href="590_1.mp3" class="audio-link">Die Gesamtschule in Erle in Costa Rica</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="590_1.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="590_2.mp3" class="audio-link">Der Besuch aus Costa Rica in Erle</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="590_2.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="590_3.mp3" class="audio-link">Die Berufsberatung durch Frau Bellendorf (Agentur für Arbeit)</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="590_3.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="590_4.mp3" class="audio-link">Die Ausstellung des Dt. Bundestages an unserer Schule: Eröffnung durch Frau Römer und Herrn Tesch</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="590_4.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="590_5.mp3" class="audio-link">Die Ausstellung des Dt. Bundestages an unserer Schule: SchülerInnen-Vertreter und Elternvertreter</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="590_5.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="590_6.mp3" class="audio-link">Die Ausstellung des Dt. Bundestages an unserer Schule: Gäste</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="590_6.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="590_7.mp3" class="audio-link">RH-Lehrerininterview mit Frau Kolbecher</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="590_7.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-        </ul>
-    </div>
 
-    <!-- Playlist RH 589 -->
-    <div class="playlist-box">
-        <h3>Playlist RH 589</h3>
-        <p><b>Datum:</b> 10.11.2024</p>
-        <ul>
-            <li><a href="589_1.mp3" class="audio-link">Projektwoche: Projektgruppen: Podcasts, Sport, Streichen, Surresse, Vegan, Vulkan und Leben im Wasser</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="589_1.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="589_2.mp3" class="audio-link">Berufswahlmessen Firmen (1.)</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="589_2.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="589_3.mp3" class="audio-link">Berufswahlmessen Firmen (2.)</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="589_3.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="589_4.mp3" class="audio-link">Berufswahlmessen Schülerstimmen</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="589_4.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="589_5.mp3" class="audio-link">Wandertag</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="589_5.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="589_6.mp3" class="audio-link">Termine</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="589_6.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Weitere Playlists von 2023 bis 2019 -->
-    <div class="playlist-box">
-        <h3>Playlist RH 588</h3>
-        <p><b>Datum:</b> 13.10.2024</p>
-        <ul>
-            <li><a href="588_1.mp3" class="audio-link">Rückblick Projektwoche: LGBTQ und Planspiel</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="588_1.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="588_2.mp3" class="audio-link">Medientag für den 9. Jahrgang im Hans-Sachs-Haus</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="588_2.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="588_3.mp3" class="audio-link">Sportfest an unserer Schule</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="588_3.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="588_4.mp3" class="audio-link">Caritas U25 Aktion</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="588_4.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="588_5.mp3" class="audio-link">Qualitätsanalyse: Erste Ergebnisse stellt der Schulleiter vor</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="588_5.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-            <li><a href="588_6.mp3" class="audio-link">Lehrerinterview mit Herrn Küppershaus</a>
-                <div class="audio-container">
-                    <audio controls>
-                        <source src="588_6.mp3" type="audio/mp3">
-                        Ihr Browser unterstützt dieses Audioformat nicht.
-                    </audio>
-                </div>
-            </li>
-        </ul>
-    </div>
     <footer>
         &copy; 2024 Radio Herby. Alle Rechte vorbehalten.
-    </footer>
-
-    <script>
-        // Funktion für das Umschalten der Sidebar
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            const content = document.querySelector('.content');
-            const menuToggle = document.querySelector('.menu-toggle');
-            
-            sidebar.classList.toggle('open');
-            content.classList.toggle('shift');
-            
-            // Button ausblenden, wenn Sidebar geöffnet ist
-            if (sidebar.classList.contains('open')) {
-                menuToggle.classList.add('hide');
-            } else {
-                menuToggle.classList.remove('hide');
-            }
-        }
-    
-        // Scroll-Verhalten für den Button
-        let menuToggle = document.querySelector('.menu-toggle');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {  // Wenn mehr als 50px gescrollt wurde
-                menuToggle.classList.add('hide');
-            } else {
-                menuToggle.classList.remove('hide');
-            }
-        });
-// Alle Links mit der Klasse "audio-link" auswählen
-const audioLinks = document.querySelectorAll('.audio-link');
-
-audioLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        // Verhindern, dass der Link die Seite neu lädt
-        e.preventDefault();
-
-        // Das nächste Audio-Element einblenden
-        const audioContainer = link.nextElementSibling;
-        const audioElement = audioContainer.querySelector('audio');
-
-        // Wenn der Audio-Container ausgeblendet ist, zeigen wir ihn an und spielen ihn ab
-        if (audioContainer.style.display === 'none' || audioContainer.style.display === '') {
-            audioContainer.style.display = 'block';
-            audioElement.play();
-        } else {
-            // Wenn das Audio schon abgespielt wird, brechen wir es ab und klappen es wieder ein
-            audioElement.pause();
-            audioElement.currentTime = 0; // Setzt den Fortschritt zurück
-            audioContainer.style.display = 'none';
-        }
-
-        // Wenn das Audio zu Ende ist, klappen wir den Container wieder ein
-        audioElement.addEventListener('ended', () => {
-            audioContainer.style.display = 'none';
-        });
-    });
-});
-
-    </script>
-</body>
-</html>

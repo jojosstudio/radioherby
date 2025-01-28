@@ -152,6 +152,8 @@
 
             .menu-toggle {
                 display: block;
+                opacity: 0.5;
+                transition: opacity 0.3s ease, transform 0.3s ease;
             }
 
             .sidebar.open {
@@ -161,8 +163,8 @@
             .content.shift {
                 margin-left: 250px;
             }
-
         }
+
         .close-menu {
             display: none;
             top: 20px;
@@ -176,79 +178,66 @@
             font-size: 1.2em;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
-            .close-menu {
-    display: block;
-    opacity: 0.5; /* Halb durchsichtig */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
-}
-@media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
 
-            .content {
-                margin-left: 0;
-            }
+        .close-menu {
+            display: block;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
 
-            .menu-toggle {
-    display: block;
-    opacity: 0.5; /* Halb durchsichtig */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Bewegung */
-}
-}
-.playlist-box a {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #0073e6;
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    border-radius: 6px;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        .playlist-box a {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 6px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.playlist-box a:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
+        .playlist-box a:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
 
-.playlist-box a:active {
-    background-color: #1e7e34;
-    transform: translateY(1px);
-}
+        .playlist-box a:active {
+            background-color: #1e7e34;
+            transform: translateY(1px);
+        }
 
-.playlist-box ul {
-    list-style-type: none;
-    padding: 0;
-}
+        .playlist-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-.playlist-box li {
-    margin-bottom: 10px;
-}
+        .playlist-box li {
+            margin-bottom: 10px;
+        }
 
-.playlist-box audio {
-    margin-top: 8px; /* Abstand zwischen dem Button und dem Audio-Player */
-    width: 100%; /* Audio-Player nimmt die gesamte Breite des Containers ein */
-    border-radius: 6px;
-    background-color: #f1f1f1;
-}
-/* Standardmäßig die Audio-Container ausblenden */
-.audio-container {
-    display: none;
-}
+        .playlist-box audio {
+            margin-top: 8px;
+            width: 100%;
+            border-radius: 6px;
+            background-color: #f1f1f1;
+        }
 
-/* Optionales Styling für den Link, der das Audio anzeigt */
-.audio-link {
-    color: #007BFF;
-    cursor: pointer;
-    text-decoration: none;
-}
+        /* Standardmäßig die Audio-Container ausblenden */
+        .audio-container {
+            display: none;
+        }
 
-.audio-link:hover {
-    text-decoration: underline;
-}
+        .audio-link {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .audio-link:hover {
+            text-decoration: underline;
+        }
 
     </style>
 </head>
@@ -277,7 +266,7 @@
         <section class="main-content">
             <h2>Playlist-Archiv</h2>
             <section class="main-content">
-    <h2>Playlist-Archiv</h2>
+                <h2>Playlist-Archiv</h2>
 
     <!-- Playlist RH 591 -->
     <div class="playlist-box">
